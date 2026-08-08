@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Help, frequently asked questions, purchases, and contact information for the Negoto sleep talk recorder.">
+  <meta name="theme-color" content="#060711">
+  <title>Negoto Support</title>
+  <link rel="alternate" hreflang="ja" href="https://developerkerukeru.github.io/support/">
+  <link rel="alternate" hreflang="en" href="https://developerkerukeru.github.io/support/en/">
+  <style>
+    :root { color-scheme: dark; --bg:#060711; --surface:#0e101a; --surface2:#151728; --line:#302d4d; --text:#f5f2eb; --muted:#a3a4b3; --purple:#8067f5; --lavender:#b9aaff; --cyan:#60ddeb; --radius:24px; }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; min-height: 100vh; font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color: var(--text); background: radial-gradient(circle at 82% 8%,rgba(128,103,245,.16),transparent 28%), radial-gradient(circle at 10% 55%,rgba(96,221,235,.07),transparent 25%), var(--bg); line-height: 1.65; }
+    a { color: inherit; }
+    .page { width: min(1080px,calc(100% - 40px)); margin: 0 auto; padding-bottom: 54px; }
+    .nav { min-height: 76px; display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .brand { text-decoration:none; font-size:21px; font-weight:700; letter-spacing:.05em; }
+    .nav-links { display:flex; align-items:center; gap:10px; }
+    .nav-link { color:var(--muted); text-decoration:none; font-size:14px; border:1px solid var(--line); border-radius:999px; padding:7px 12px; }
+    .hero { position:relative; overflow:hidden; min-height:390px; display:flex; flex-direction:column; justify-content:center; padding:68px clamp(28px,6vw,78px); background:linear-gradient(145deg,rgba(18,19,33,.96),rgba(10,11,21,.96)); border:1px solid var(--line); border-radius:34px; }
+    .hero::before { content:""; position:absolute; width:300px; height:300px; border-radius:50%; right:-70px; top:-110px; border:1px solid rgba(185,170,255,.25); box-shadow:0 0 90px rgba(128,103,245,.2) inset; }
+    .eyebrow,.section-label { color:var(--cyan); text-transform:uppercase; letter-spacing:.16em; font-size:12px; font-weight:800; margin:0 0 13px; }
+    h1 { font-size:clamp(42px,7vw,76px); line-height:1.02; letter-spacing:-.055em; margin:0; max-width:790px; }
+    .lead { color:var(--muted); font-size:clamp(16px,2vw,19px); max-width:680px; margin:24px 0 0; }
+    .actions { display:flex; flex-wrap:wrap; gap:12px; margin-top:30px; }
+    .button { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:0 20px; border-radius:999px; background:var(--purple); color:#fff; text-decoration:none; font-weight:750; }
+    .button.secondary { background:transparent; border:1px solid var(--line); color:var(--text); }
+    .section { margin-top:82px; }
+    .section-heading { margin-bottom:25px; }
+    h2 { font-size:clamp(27px,4vw,42px); letter-spacing:-.035em; line-height:1.15; margin:0; }
+    h3 { font-size:18px; margin:0 0 8px; }
+    p { margin:0; }
+    .section-note { color:var(--muted); margin-top:10px; }
+    .quick-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; }
+    .quick-card { position:relative; min-height:205px; padding:27px; background:rgba(14,16,26,.88); border:1px solid var(--line); border-radius:var(--radius); }
+    .quick-number { display:grid; place-items:center; width:34px; height:34px; margin-bottom:27px; border-radius:50%; background:rgba(128,103,245,.15); color:var(--lavender); font-weight:800; }
+    .quick-card p,.answer p,.answer li { color:var(--muted); }
+    .faq { display:grid; gap:10px; }
+    details { background:rgba(14,16,26,.9); border:1px solid var(--line); border-radius:18px; overflow:hidden; }
+    summary { cursor:pointer; list-style:none; padding:20px 22px; font-weight:720; display:flex; align-items:center; justify-content:space-between; gap:16px; }
+    summary::-webkit-details-marker { display:none; }
+    summary::after { content:"+"; color:var(--lavender); font-size:23px; font-weight:400; }
+    details[open] summary::after { content:"−"; }
+    .answer { padding:0 22px 22px; border-top:1px solid rgba(48,45,77,.7); padding-top:18px; }
+    .answer p+p,.answer p+ol,.answer p+ul { margin-top:12px; }
+    .answer ol,.answer ul { margin:12px 0 0; padding-left:22px; }
+    .contact-card { display:grid; grid-template-columns:1fr auto; gap:30px; align-items:center; padding:34px; border:1px solid rgba(96,221,235,.2); border-radius:var(--radius); background:linear-gradient(135deg,rgba(96,221,235,.07),rgba(128,103,245,.08)); }
+    .contact-card p { color:var(--muted); margin-top:9px; }
+    .contact-meta { color:var(--text)!important; font-weight:650; word-break:break-all; }
+    footer { display:flex; justify-content:space-between; gap:20px; margin-top:78px; padding-top:25px; border-top:1px solid var(--line); color:var(--muted); font-size:13px; }
+    .footer-links { display:flex; flex-wrap:wrap; gap:18px; }
+    .footer-links a { text-decoration:none; }
+    @media(max-width:760px){ .page{width:min(100% - 28px,1080px)} .hero{padding:50px 24px;min-height:420px} .quick-grid{grid-template-columns:1fr}.quick-card{min-height:auto}.contact-card{grid-template-columns:1fr}.contact-card .button{width:100%} footer{flex-direction:column} }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+  </style>
+</head>
+<body>
+  <main class="page">
+    <nav class="nav" aria-label="Page navigation">
+      <a class="brand" href="#top">Negoto</a>
+      <div class="nav-links"><a class="nav-link" href="../" lang="ja">日本語</a><a class="nav-link" href="#contact">Contact</a></div>
+    </nav>
+
+    <section class="hero" id="top">
+      <p class="eyebrow">Negoto Support</p>
+      <h1>Quiet support,<br>whenever you need it.</h1>
+      <p class="lead">Learn how to use Negoto, solve common recording issues, and manage Premium or theme purchases.</p>
+      <div class="actions"><a class="button" href="#faq">Browse FAQs</a><a class="button secondary" href="mailto:appdeveloper.kerukeru@gmail.com?subject=Negoto%20Support">Contact by email</a></div>
+    </section>
+
+    <section class="section" aria-labelledby="start-heading">
+      <div class="section-heading"><p class="section-label">Getting started</p><h2 id="start-heading">Three simple steps</h2></div>
+      <div class="quick-grid">
+        <article class="quick-card"><span class="quick-number">1</span><h3>Start recording</h3><p>Open the Record tab and tap Start Recording. Keep Negoto open while it listens overnight.</p></article>
+        <article class="quick-card"><span class="quick-number">2</span><h3>Listen in the morning</h3><p>Recordings captured overnight appear under Tonight’s Sleep Talk, ready to replay.</p></article>
+        <article class="quick-card"><span class="quick-number">3</span><h3>Save your favorites</h3><p>Tap Save for any recording you want to keep. It will remain available in the Saved tab.</p></article>
+      </div>
+    </section>
+
+    <section class="section" id="faq" aria-labelledby="faq-heading">
+      <div class="section-heading"><p class="section-label">FAQ</p><h2 id="faq-heading">Frequently asked questions</h2><p class="section-note">Select a question to reveal the answer.</p></div>
+      <div class="faq">
+        <details><summary>I cannot start recording</summary><div class="answer"><p>Make sure Negoto has microphone permission.</p><ol><li>Open iPhone Settings.</li><li>Go to Privacy &amp; Security, then Microphone.</li><li>Turn on Negoto.</li></ol><p>If recording still does not start, fully close Negoto and open it again.</p></div></details>
+        <details><summary>My sleep talk is not being recorded</summary><div class="answer"><p>Place the iPhone on a stable surface near your pillow without covering its microphones. You can also increase Recording Sensitivity in Settings.</p><p>Keep the Negoto screen open during the recording session.</p></div></details>
+        <details><summary>How does the Sleep Talk Filter work?</summary><div class="answer"><p>The filter uses on-device speech recognition to keep recordings that contain a human voice and remove many snores or environmental noises. It also uses recognized words to create the recording title.</p><p>Choose Automatic, Japanese, or English under Recognition Language in Negoto Settings. Speech Recognition must also be enabled in iPhone Settings.</p></div></details>
+        <details><summary>How long do recordings stay on the Record tab?</summary><div class="answer"><p>Recordings on the Record tab are automatically deleted 24 hours after they are created. Tap Save before then to keep a recording.</p></div></details>
+        <details><summary>Are my recordings uploaded?</summary><div class="answer"><p>No. Recordings remain in the App’s local storage and are not uploaded to the Developer, AdMob, RevenueCat, or Expo. On supported devices, filtering and transcription use Apple’s on-device speech recognition. See the Privacy Policy for details.</p></div></details>
+        <details><summary>How do I restore Premium or purchased themes?</summary><div class="answer"><p>Sign in with the same Apple Account used for the original purchase.</p><ul><li>Premium: tap Restore purchases on the Premium screen.</li><li>Themes: tap Restore Purchases at the bottom of the Theme Store.</li></ul><p>Restoring a purchase does not charge you again.</p></div></details>
+        <details><summary>How do I manage or cancel Premium?</summary><div class="answer"><p>Monthly and annual Premium plans are managed through Apple.</p><ol><li>Open iPhone Settings.</li><li>Tap your name.</li><li>Tap Subscriptions, then Negoto.</li></ol><p>A lifetime Premium purchase does not expire. Themes bought individually also remain available if a subscription ends.</p></div></details>
+        <details><summary>What should I include in a bug report?</summary><div class="answer"><p>If possible, include your iPhone model, iOS version, Negoto version, the steps that caused the issue, and a screenshot. You do not need to attach your recording.</p></div></details>
+      </div>
+    </section>
+
+    <section class="section contact-card" id="contact" aria-labelledby="contact-heading"><div><p class="section-label">Contact</p><h2 id="contact-heading">Still need help?</h2><p>Send us an email and we will take a look.</p><p class="contact-meta">appdeveloper.kerukeru@gmail.com</p></div><a class="button" href="mailto:appdeveloper.kerukeru@gmail.com?subject=Negoto%20Support">Contact Support</a></section>
+
+    <footer><span>© 2026 Negoto</span><div class="footer-links"><a href="../../privacy/en/">Privacy Policy</a><a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">Terms of Use</a><a href="https://apps.apple.com/app/id6779925036">App Store</a></div></footer>
+  </main>
+</body>
+</html>
